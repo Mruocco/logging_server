@@ -7,6 +7,12 @@ server.on('request', (request, response) => {
         body.push(chunk);
     }).on('end', () => {
         body = Buffer.concat(body).toString();
+
+        if(request.headers['user-agent'] !== 'jabber-communication-publisher'){
+          response.end();
+          return;
+        }
+
         console.log('===================')
         console.log(`==== ${request.method} - ${request.url}`);
         console.log('> Headers');
