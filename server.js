@@ -8,7 +8,7 @@ server.on('request', (request, response) => {
     }).on('end', () => {
         body = Buffer.concat(body).toString();
 
-        if((request.headers['user-agent'] !== 'jabber-communication-publisher') && request.headers['User-Agent'] !== 'jabber-communication-publisher'){
+        if((request.headers['user-agent'] !== 'homeintel-communication-publisher') && request.headers['User-Agent'] !== 'homeintel-communication-publisher'){
           response.end();
           return;
         }
