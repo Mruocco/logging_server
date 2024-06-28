@@ -7,11 +7,11 @@ server.on('request', (request, response) => {
         body.push(chunk);
     }).on('end', () => {
         body = Buffer.concat(body).toString();
-
-        if((request.headers['user-agent'] !== 'homeintel-communication-publisher') && request.headers['User-Agent'] !== 'homeintel-communication-publisher'){
+        console.log(request.headers);
+//        if((request.headers['user-agent'] !== 'homeintel-communication-publisher') && request.headers['User-Agent'] !== 'homeintel-communication-publisher'){
           response.end();
           return;
-        }
+  //      }
 
         console.log('===================')
         console.log(`==== ${request.method} - ${request.url}`);
